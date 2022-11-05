@@ -3,7 +3,7 @@ variable "base_bucket_name" {
 }
 
 variable "owner" {
-  default = "mascalmeida"
+  default = "masca"
 }
 
 variable "goal" {

@@ -28,21 +28,12 @@ jobs:
       # IaC Terraform Apply
       ## Setup terraform without specifies the CLI version
       - uses: hashicorp/setup-terraform@v2
-      ## Go to terraform (IaC) folder
-      - name: Go to terraform folder
-        run: cd iac
-      ## Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
-      - name: Terraform Init
-        run: terraform init
-      ## Validate the terraform files
-      - name: Terraform Validate
-        run: terraform validate
-      ## Checks that all Terraform configuration files adhere to a canonical format
-      - name: Terraform Format
-        run: terraform fmt -check
-      ## Generates an execution plan for Terraform
-      - name: Terraform Plan
-        run: terraform plan
-      # On push to "main", build or change infrastructure according to Terraform configuration files
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
+      ## Apply terraform (IaC)
+      - name: Apply terraform
+        run: 
+          cd iac
+          terraform init
+          terraform validate
+          terraform fmt
+          terraform plan
+          terraform apply -auto-approve

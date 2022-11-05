@@ -30,13 +30,8 @@ jobs:
         aws-region: us-east-1
     
     # IaC Terraform Apply
-    ## Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
-    defaults:
-      run:
-        shell: bash
     ## Setup terraform without specifies the CLI version
-    - name: Set up Terraform
-      uses: hashicorp/setup-terraform@v2
+    - uses: hashicorp/setup-terraform@v2
     ## Go to terraform (IaC) folder
     - name: Go to terraform folder
       run: cd iac

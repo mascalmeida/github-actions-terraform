@@ -6,7 +6,7 @@ Using the HCL (HashiCorp Configuration Language) is possible to create the cloud
 
 To consolidate my knowledge I created this GitHub repository. Using GitHub actions combine to Terraform I created a complete deployment workflow for an Amazon S3 bucket.
 
-## Workflow
+- Workflow
 
 - References
 1. https://github.com/marketplace/actions/hashicorp-setup-terraform

@@ -37,8 +37,5 @@ jobs:
           terraform fmt
           terraform plan
           terraform apply -auto-approve
-          echo "it will sleep for 60s before the destroy command!"
-          echo "go to aws S3 dashboard to see the bucket created"
-          sleep 60
+        # Note: the last command will destroy everything in aws
           terraform destroy -auto-approve
-          echo "go to aws S3 dashboard to see that the bucket was deleted"

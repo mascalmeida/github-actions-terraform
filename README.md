@@ -1,2 +1,2 @@
-# GitHub Actions
-How to use GitHub actions to create a deployment workflow.
+# GitHub Actions & Terraform
+How to use GitHub Actions and Terraform to create a deploy workflow that deploys an Amazon S3 bucket.

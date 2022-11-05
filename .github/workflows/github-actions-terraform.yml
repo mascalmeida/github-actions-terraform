@@ -1,3 +1,4 @@
+# Ref: https://github.com/marketplace/actions/hashicorp-setup-terraform
 name: GitHub-Actions & Terraform
 
 on:
@@ -7,47 +8,32 @@ on:
     branches: [ "main" ]
 
 jobs:
-  deploy:
+  aws-bucket-deploy:
     name: aws bucket deploy
     runs-on: ubuntu-latest
 
-    # Checkout the repository to the GitHub Actions runner
-    - name: Checkout
-      uses: actions/checkout@v3
+    steps:
+      # Checkout the repository to the GitHub Actions runner
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    # Setup python 3.10
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-
-    # AWS credentials
-    - name: AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
-
-    # IaC Terraform Apply
-    ## Setup terraform without specifies the CLI version
-    - name: Set up Terraform
-    - uses: hashicorp/setup-terraform@v2
-    ## Go to terraform (IaC) folder
-    - name: Go to terraform folder
-      run: cd iac
-    ## Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
-    - name: Terraform Init
-      run: terraform init
-    ## Validate the terraform files
-    - name: Terraform Validate
-      run: terraform validate
-    ## Checks that all Terraform configuration files adhere to a canonical format
-    - name: Terraform Format
-      run: terraform fmt -check
-    ## Generates an execution plan for Terraform
-    - name: Terraform Plan
-      run: terraform plan
-    # On push to "main", build or change infrastructure according to Terraform configuration files
-    - name: Terraform Apply
-      run: terraform apply -auto-approve
+      # AWS credentials
+      - name: AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      
+      # IaC Terraform Apply
+      ## Setup terraform without specifies the CLI version
+      - uses: hashicorp/setup-terraform@v2
+      ## Apply terraform (IaC)
+      - name: Apply terraform
+        run: |
+          cd iac
+          terraform init
+          terraform validate
+          terraform fmt
+          terraform plan
+          terraform apply -auto-approve

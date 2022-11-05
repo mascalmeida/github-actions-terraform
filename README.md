@@ -1,5 +1,4 @@
 # GitHub Actions & Terraform
-How to use GitHub Actions and Terraform to create a deploy workflow that deploys an Amazon S3 bucket.
 
 Throught [the Data Engineer Cloud bootcamp](https://github.com/mascalmeida/bootcamp-xpe-data-eng-cloud) I have learned about a lot of fundamental Data Engineering tools, but what I liked the most was Terraform and the IaC concept (Infrastructure as a Code). For developers like me that love best practices and guidelines on development workflow, Terraform is a vital friend hahaha
 

@@ -9,9 +9,10 @@ To consolidate my knowledge I created this GitHub repository. Using GitHub actio
 - Workflow
 
 - References
-1. https://github.com/marketplace/actions/hashicorp-setup-terraform
-2. https://developer.hashicorp.com/terraform/tutorials/automation/github-actions
-3. https://docs.github.com/en/actions/quickstart
+1. https://towardsdatascience.com/git-actions-terraform-for-data-engineers-scientists-gcp-aws-azure-448dc7c60fcc
+2. https://github.com/marketplace/actions/hashicorp-setup-terraform
+3. https://developer.hashicorp.com/terraform/tutorials/automation/github-actions
+4. https://docs.github.com/en/actions/quickstart
 
 ## Support
 

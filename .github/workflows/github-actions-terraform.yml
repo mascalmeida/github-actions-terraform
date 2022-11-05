@@ -29,6 +29,7 @@ jobs:
       ## Setup terraform without specifies the CLI version
       - uses: hashicorp/setup-terraform@v2
       ## Apply terraform (IaC)
+      ### Note: the last command will destroy everything in AWS
       - name: Apply terraform
         run: |
           cd iac
@@ -37,5 +38,4 @@ jobs:
           terraform fmt
           terraform plan
           terraform apply -auto-approve
-        # Note: the last command will destroy everything in aws
           terraform destroy -auto-approve

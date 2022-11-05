@@ -30,7 +30,7 @@ jobs:
       - uses: hashicorp/setup-terraform@v2
       ## Apply terraform (IaC)
       - name: Apply terraform
-        run: 
+        run: |
           cd iac
           terraform init
           terraform validate

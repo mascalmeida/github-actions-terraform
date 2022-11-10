@@ -18,4 +18,4 @@ To consolidate my knowledge I created this GitHub repository. Using GitHub actio
 
 Give a ⭐️ if you like this project!
 
-React 👍 in my [Linkedin post!](https://www.linkedin.com/posts/lucas-mascarenhas_python-docker-mysql-activity-6980180488736935937-aXbK/)
+React 👍 in my [Linkedin post!](https://www.linkedin.com/posts/lucas-mascarenhas_amazons3-amazonemr-spark-activity-6995400881869369345-KQja)
